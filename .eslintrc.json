@@ -10,7 +10,14 @@
         "prettier" 
     ],
     "overrides": [
-    ],
+        {
+          "files": ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
+          "rules": {
+            // example of overriding a rule
+            "storybook/hierarchy-separator": "error"
+          }
+        }
+      ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaVersion": "latest",
@@ -23,6 +30,7 @@
         // "spaced-comment": "error",
         // "quotes": ["error", "single"],
         // "no-duplicate-imports": "error"
+        "no-unused-vars": [1, { "args": "after-used", "argsIgnorePattern": "^_" }]
     },
     "settings": {
         "import/resolver": {
